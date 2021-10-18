@@ -78,7 +78,7 @@ $model->whereIn('id', [1,2,3,4,5]);
 
 
 http://example.com/demo?filter[content.ru.name]=dwqdwq
-$model->where('content->ru->name', '=', 'dwqdwq');
+$model->where('content->ru->name', 'like', 'dwqdwq');
 
 ```
 
@@ -175,3 +175,6 @@ Model::filtersApplySelection(RoleSelection::class)->simplePaginate();
 ```
 
 Тогда все фильтры установленные в слое будут применены.
+
+Для удобного отображения и объединения фильтров используйте слой "[Selection](https://orchid.software/ru/docs/grouping/#nabor-filtrov)".
+
